@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITRex - Lab. Sign Up Page</title>
+    <meta name="description" content="SignUp" />
+    <meta name="keywords" content="sign, signup" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./styles/pages/signup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="signup__wrapper">
+          <div class="signup__item">
+            <h1>Sign Up</h1>
+            <form class="signup__form">
+              <div class="signup__firstname">
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="First Name"
+                />
+              </div>
+              <div class="signup__lastname">
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  placeholder="Last Name"
+                />
+              </div>
+              <div class="signup__email">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="signup__password">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="signup__confirm">
+                <input
+                  type="password"
+                  name="confirm"
+                  id="confirm"
+                  placeholder="Confirm Password"
+                />
+              </div>
+              <button type="submit" class="signup__button">Sign up</button>
+            </form>
+            <div class="signup__notification">
+              <p>Already have an account?</p>
+              <a href="./signin.html">Sign in</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

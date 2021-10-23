@@ -1,0 +1,245 @@
+@import "../colors.scss";
+
+.signup__wrapper {
+  background: url("../../assets/background/bg.jpg");
+  width: 100%;
+  height: 24.2rem;
+  .signup__item {
+    position: absolute;
+    background: $background;
+    top: 7.2rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 2.4rem 2.4rem 0 0;
+    padding: 3.2rem;
+    h1 {
+      height: 32px;
+      margin-bottom: 2.4rem;
+      line-height: 3.3rem;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+    .signup__form {
+      input {
+        position: relative;
+        width: 100%;
+        font-size: 1.5rem;
+        border-radius: 0.8rem;
+        height: 4rem;
+        padding: 0.95rem 0.5rem 0.95rem 4.7rem;
+        border: 1px solid #dce0ec;
+        outline: none;
+        margin-bottom: 2.4rem;
+        &::placeholder {
+          color: $primarytext;
+        }
+        &:focus {
+          border: 1px solid $primary;
+        }
+      }
+      .signup__firstname,
+      .signup__lastname {
+        position: relative;
+        &:before {
+          content: url("../../assets/icon/user.svg");
+          position: absolute;
+          top: 1rem;
+          left: 1.8rem;
+          width: 2rem;
+          height: 2rem;
+          z-index: 1;
+        }
+      }
+      .signup__email {
+        position: relative;
+        &:before {
+          content: url("../../assets/icon/email.svg");
+          position: absolute;
+          top: 1.2rem;
+          left: 1.8rem;
+          width: 2rem;
+          height: 2rem;
+          z-index: 1;
+        }
+      }
+      .signup__password {
+        position: relative;
+        input {
+          padding: 0.95rem 4.7rem 0.95rem 4.7rem;
+        }
+        &:before {
+          content: url("../../assets/icon/password.svg");
+          position: absolute;
+          top: 1rem;
+          left: 2rem;
+          width: 2rem;
+          height: 2rem;
+          z-index: 1;
+        }
+        &:after {
+          content: url("../../assets/icon/hidden.svg");
+          position: absolute;
+          top: 0.9rem;
+          right: 1.9rem;
+          width: 2rem;
+          height: 2rem;
+          z-index: 1;
+        }
+      }
+      .signup__confirm {
+        position: relative;
+        margin-bottom: 0.8rem;
+        input {
+          padding: 0.95rem 4.7rem 0.95rem 4.7rem;
+        }
+        &:before {
+          content: url("../../assets/icon/confirm.svg");
+          position: absolute;
+          top: 1.4rem;
+          left: 2rem;
+          width: 2rem;
+          height: 2rem;
+          z-index: 1;
+        }
+        &:after {
+          content: url("../../assets/icon/hidden.svg");
+          position: absolute;
+          top: 0.9rem;
+          right: 1.9rem;
+          width: 2rem;
+          height: 2rem;
+          z-index: 1;
+        }
+      }
+      .signup__button {
+        background: $primary;
+        text-align: left;
+        border: none;
+        color: $white;
+        padding: 1.2rem 1.6rem;
+        width: 12.2rem;
+        height: 4.8rem;
+        border-radius: 0.8rem;
+        font-weight: 500;
+        font-size: 1.5rem;
+        &:after {
+          content: url("../../assets/icon/arrow-right.svg");
+          position: relative;
+          height: 13.3rem;
+          width: 7.7rem;
+          top: 0.2rem;
+          left: 1.7rem;
+        }
+      }
+    }
+    .signup__notification {
+      position: absolute;
+      display: flex;
+      gap: 1.3rem;
+      bottom: 7.9rem;
+      p {
+        font-size: 1.5rem;
+        color: $primarytext;
+        margin-bottom: 0.2rem;
+      }
+      a {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .signup__wrapper {
+    background: url("../../assets/background/bg-tablet.jpg");
+    height: 100vh;
+
+    .signup__item {
+      top: 0;
+      left: 20.8rem;
+      right: 0;
+      bottom: 0;
+      border-radius: 0;
+      padding: 17rem 9.6rem 0;
+      h1 {
+        font-size: 2.4rem;
+        line-height: 2.64rem;
+        margin-bottom: 3.8rem;
+      }
+
+      .signup__form {
+        input {
+          font-size: 1.7rem;
+          height: 5.6rem;
+          padding: 1.6rem 0.5rem 1.6rem 6.3rem;
+          margin-bottom: 4rem;
+        }
+        .signup__firstname,
+        .signup__lastname {
+          &:before {
+            top: 1.8rem;
+            left: 2.6rem;
+          }
+        }
+        .signup__email {
+          &:before {
+            top: 2rem;
+            left: 2.6rem;
+          }
+        }
+        .signup__password {
+          &:before {
+            top: 1.8rem;
+            left: 2.8rem;
+          }
+          &:after {
+            top: 1.7rem;
+            right: 2.7rem;
+          }
+        }
+        .signup__confirm {
+          margin-bottom: 2.4rem;
+          &:before {
+            top: 2.2rem;
+            left: 2.8rem;
+          }
+          &:after {
+            top: 1.7rem;
+            right: 2.7rem;
+          }
+        }
+        .signup__button {
+          padding: 1.6rem 2.4rem;
+          width: 14.6rem;
+          height: 5.6rem;
+          font-size: 1.7rem;
+          &:after {
+            top: 0.1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .signup__wrapper {
+    background: url("../../assets/background/bg-desc.jpg");
+    height: 100vh;
+
+    .signup__item {
+      left: 136rem;
+
+      .signup__form {
+        .signup__password,
+        .signup__confirm {
+          input {
+            padding: 0.95rem 4.7rem 0.95rem 6.3rem;
+          }
+        }
+      }
+    }
+  }
+}

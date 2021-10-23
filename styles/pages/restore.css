@@ -1,0 +1,182 @@
+.restore__wrapper {
+  background: url("../../assets/background/bg.jpg");
+  width: 100%;
+  height: 24.2rem;
+}
+
+.restore__wrapper .restore__item {
+  position: absolute;
+  background: #f9faff;
+  top: 7.2rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 2.4rem 2.4rem 0 0;
+  padding: 3.2rem;
+}
+
+.restore__wrapper .restore__item h1 {
+  position: relative;
+  left: 4rem;
+  height: 32px;
+  width: 21.6rem;
+  margin-bottom: 2.4rem;
+  line-height: 3.3rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.restore__wrapper .restore__item h1:before {
+  position: absolute;
+  left: -3.2rem;
+  content: url("../../assets/icon/arrow-left.svg");
+}
+
+.restore__wrapper .restore__item .restore__notification {
+  position: relative;
+  margin-bottom: 2.4rem;
+}
+
+.restore__wrapper .restore__item .restore__notification p {
+  font-size: 1.5rem;
+  color: #a1abc9;
+  margin-bottom: 0.2rem;
+  line-height: 1.95rem;
+}
+
+.restore__wrapper .restore__item .restore__notification a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #7297ff;
+}
+
+.restore__wrapper .restore__item .restore__form input {
+  position: relative;
+  width: 100%;
+  font-size: 1.5rem;
+  border-radius: 0.8rem;
+  height: 4rem;
+  padding: 0.95rem 0.5rem 0.95rem 4.7rem;
+  border: 1px solid #dce0ec;
+  outline: none;
+  margin-bottom: 2.4rem;
+}
+
+.restore__wrapper .restore__item .restore__form input::-webkit-input-placeholder {
+  color: #a1abc9;
+}
+
+.restore__wrapper .restore__item .restore__form input:-ms-input-placeholder {
+  color: #a1abc9;
+}
+
+.restore__wrapper .restore__item .restore__form input::-ms-input-placeholder {
+  color: #a1abc9;
+}
+
+.restore__wrapper .restore__item .restore__form input::placeholder {
+  color: #a1abc9;
+}
+
+.restore__wrapper .restore__item .restore__form input:focus {
+  border: 1px solid #7297ff;
+}
+
+.restore__wrapper .restore__item .restore__form .restore__email {
+  position: relative;
+}
+
+.restore__wrapper .restore__item .restore__form .restore__email:before {
+  content: url("../../assets/icon/email.svg");
+  position: absolute;
+  top: 1.2rem;
+  left: 1.8rem;
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+}
+
+.restore__wrapper .restore__item .restore__form .restore__email.error input {
+  border: 1px solid #f6657f;
+}
+
+.restore__wrapper .restore__item .restore__form .restore__button {
+  background: #7297ff;
+  display: block;
+  position: relative;
+  top: 0.8rem;
+  text-align: left;
+  border: none;
+  color: #ffffff;
+  padding: 1.2rem 1.6rem;
+  width: 19.8rem;
+  height: 4.8rem;
+  border-radius: 0.8rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.restore__wrapper .restore__item .restore__form .restore__button:after {
+  content: url("../../assets/icon/arrow-right.svg");
+  position: relative;
+  height: 13.3rem;
+  width: 7.7rem;
+  top: 0.1rem;
+  left: 1.4rem;
+}
+
+@media (min-width: 768px) {
+  .restore__wrapper {
+    background: url("../../assets/background/bg-tablet.jpg");
+    height: 100vh;
+  }
+  .restore__wrapper .restore__item {
+    top: 0;
+    left: 20.8rem;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    padding: 26.7rem 9.6rem 0;
+  }
+  .restore__wrapper .restore__item h1 {
+    font-size: 2.4rem;
+    line-height: 2.64rem;
+    margin-bottom: 10.7rem;
+    width: 32.6rem;
+  }
+  .restore__wrapper .restore__item .restore__form input {
+    font-size: 1.7rem;
+    height: 5.6rem;
+    padding: 1.6rem 0.5rem 1.6rem 6.3rem;
+    margin-bottom: 5.6rem;
+  }
+  .restore__wrapper .restore__item .restore__form .restore__email:before {
+    top: 2rem;
+    left: 2.6rem;
+  }
+  .restore__wrapper .restore__item .restore__form .restore__button {
+    padding: 1.6rem 2.4rem;
+    width: 21.4rem;
+    height: 5.6rem;
+    font-size: 1.7rem;
+  }
+  .restore__wrapper .restore__item .restore__form .restore__button:after {
+    top: 0.1rem;
+  }
+  .restore__wrapper .restore__item .restore__notification {
+    position: absolute;
+    top: 32.8rem;
+    width: 36.8rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .restore__wrapper {
+    background: url("../../assets/background/bg-desc.jpg");
+    height: 100vh;
+  }
+  .restore__wrapper .restore__item {
+    left: 136rem;
+  }
+}
+/*# sourceMappingURL=restore.css.map */
