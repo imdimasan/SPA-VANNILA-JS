@@ -116,6 +116,7 @@
       }
       .signup__button {
         background: $primary;
+        cursor: pointer;
         text-align: left;
         border: none;
         color: $white;
@@ -146,6 +147,7 @@
         font-size: 1.5rem;
         font-weight: 500;
         color: $primary;
+        cursor: pointer;
       }
     }
   }

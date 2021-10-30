@@ -1,0 +1,51 @@
+<section>
+  <div class="signup__wrapper">
+    <div class="signup__item">
+      <h1>Sign Up</h1>
+      <form class="signup__form">
+        <div class="signup__firstname">
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            placeholder="First Name"
+          />
+        </div>
+        <div class="signup__lastname">
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            placeholder="Last Name"
+          />
+        </div>
+        <div class="signup__email">
+          <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+        <div class="signup__password">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="signup__confirm">
+          <input
+            type="password"
+            name="confirm"
+            id="confirm"
+            placeholder="Confirm Password"
+          />
+        </div>
+        <button type="button" class="signup__button" onclick="dataHandler()">
+          Sign up
+        </button>
+      </form>
+      <div class="signup__notification">
+        <p>Already have an account?</p>
+        <a onclick="spaResolver('signin')">Sign in</a>
+      </div>
+    </div>
+  </div>
+</section>

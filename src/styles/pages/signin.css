@@ -130,6 +130,7 @@
 .signin__wrapper .signin__item .signin__form .signin__button {
   background: #7297ff;
   display: block;
+  cursor: pointer;
   position: relative;
   top: 1rem;
   text-align: left;
@@ -157,6 +158,7 @@
   color: #7297ff;
   font-size: 1.5rem;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .signin__wrapper .signin__item .signin__notification {
@@ -173,6 +175,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   color: #7297ff;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {

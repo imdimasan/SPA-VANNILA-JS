@@ -153,6 +153,7 @@
 
 .signup__wrapper .signup__item .signup__form .signup__button {
   background: #7297ff;
+  cursor: pointer;
   text-align: left;
   border: none;
   color: #ffffff;
@@ -187,6 +188,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   color: #7297ff;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {

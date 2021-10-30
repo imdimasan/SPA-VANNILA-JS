@@ -1,0 +1,35 @@
+<section>
+  <div class="signin__wrapper">
+    <div class="signin__item">
+      <h1>Sign In</h1>
+      <form class="signin__form">
+        <div class="signin__email">
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <!-- <span class="signin__email_error">
+                  Email not found. Please check the spelling
+                </span> -->
+        </div>
+        <div class="signin__password error">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+          <span class="signin__password_error"
+            >Password contain unsupported characters</span
+          >
+        </div>
+
+        <button type="button" class="signin__button" onclick="dataHandler()">
+          Sign in
+        </button>
+        <a onclick="spaResolver('restore')">Forgot Password?</a>
+      </form>
+      <div class="signin__notification">
+        <p>Don't have an account?</p>
+        <a onclick="spaResolver('/')">Sign up</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -21,7 +21,12 @@
       <section>
         <div class="restore__wrapper">
           <div class="restore__item">
+            <button
+              class="icon-arrow-left"
+              onclick="backwardHandler()"
+            ></button>
             <h1>Restore password</h1>
+
             <div class="restore__notification">
               <p>
                 Please use your email address, and we’ll send you the link to
@@ -39,7 +44,11 @@
                 <span class="restore__email_error"></span>
               </div>
 
-              <button type="submit" class="restore__button">
+              <button
+                type="button"
+                class="restore__button"
+                onclick="dataHandler()"
+              >
                 Send Reset Link
               </button>
             </form>
