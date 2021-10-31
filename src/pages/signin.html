@@ -5,20 +5,17 @@
       <form class="signin__form">
         <div class="signin__email">
           <input type="email" name="email" id="email" placeholder="Email" />
-          <!-- <span class="signin__email_error">
-                  Email not found. Please check the spelling
-                </span> -->
+          <span class="signin__email_error"></span>
         </div>
-        <div class="signin__password error">
+        <div class="signin__password">
           <input
             type="password"
             name="password"
             id="password"
             placeholder="Password"
           />
-          <span class="signin__password_error"
-            >Password contain unsupported characters</span
-          >
+          <button type="button" class="icon-eye"></button>
+          <span class="signin__password_error"></span>
         </div>
 
         <button type="button" class="signin__button" onclick="dataHandler()">

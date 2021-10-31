@@ -10,7 +10,9 @@
             id="firstname"
             placeholder="First Name"
           />
+          <span class="signup__firstname_error"></span>
         </div>
+
         <div class="signup__lastname">
           <input
             type="text"
@@ -18,10 +20,14 @@
             id="lastname"
             placeholder="Last Name"
           />
+          <span class="signup__lastname_error"></span>
         </div>
+
         <div class="signup__email">
           <input type="email" name="email" id="email" placeholder="Email" />
+          <span class="signup__email_error"></span>
         </div>
+
         <div class="signup__password">
           <input
             type="password"
@@ -29,7 +35,10 @@
             id="password"
             placeholder="Password"
           />
+          <button type="button" class="icon-eye"></button>
+          <span class="signup__password_error"></span>
         </div>
+
         <div class="signup__confirm">
           <input
             type="password"
@@ -37,10 +46,11 @@
             id="confirm"
             placeholder="Confirm Password"
           />
+          <button type="button" class="icon-eye"></button>
+          <span class="signup__confirm_error"></span>
         </div>
-        <button type="button" class="signup__button" onclick="dataHandler()">
-          Sign up
-        </button>
+
+        <button type="button" class="signup__button">Sign up</button>
       </form>
       <div class="signup__notification">
         <p>Already have an account?</p>

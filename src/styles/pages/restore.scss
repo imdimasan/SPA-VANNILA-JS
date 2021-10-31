@@ -54,6 +54,9 @@
         &:focus {
           border: 1px solid $primary;
         }
+        &.error {
+          border: 1px solid $error;
+        }
       }
 
       .restore__email {
@@ -66,11 +69,6 @@
           width: 2rem;
           height: 2rem;
           z-index: 1;
-        }
-        &.error {
-          input {
-            border: 1px solid $error;
-          }
         }
       }
 
@@ -97,6 +95,18 @@
           top: 0.1rem;
           left: 1.4rem;
         }
+      }
+
+      .restore__email_error {
+        position: relative;
+        display: none;
+        margin-bottom: 3rem;
+        font-weight: 400;
+        line-height: 16.6px;
+        font-size: 1.3rem;
+        letter-spacing: -0.24px;
+        top: -0.8rem;
+        color: $error;
       }
     }
     .icon-arrow-left {
@@ -157,6 +167,11 @@
           &:after {
             top: 0.1rem;
           }
+        }
+
+        .restore__email_error {
+          top: -1.1rem;
+          margin-bottom: 1.8rem;
         }
       }
       .restore__notification {

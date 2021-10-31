@@ -64,11 +64,15 @@
   border: 1px solid #7297ff;
 }
 
+.signin__wrapper .signin__item .signin__form input.error {
+  border: 1px solid #f6657f;
+}
+
 .signin__wrapper .signin__item .signin__form .signin__password_error,
 .signin__wrapper .signin__item .signin__form .signin__email_error {
   position: relative;
-  display: block;
-  margin-bottom: 1.4rem;
+  display: none;
+  margin-bottom: 3rem;
   font-weight: 400;
   line-height: 16.6px;
   font-size: 1.3rem;
@@ -91,10 +95,6 @@
   z-index: 1;
 }
 
-.signin__wrapper .signin__item .signin__form .signin__email.error input {
-  border: 1px solid #f6657f;
-}
-
 .signin__wrapper .signin__item .signin__form .signin__password {
   position: relative;
 }
@@ -113,18 +113,22 @@
   z-index: 1;
 }
 
-.signin__wrapper .signin__item .signin__form .signin__password:after {
-  content: url("../../assets/icon/hidden.svg");
-  position: absolute;
-  top: 0.9rem;
-  right: 1.9rem;
+.signin__wrapper .signin__item .signin__form .signin__password .icon-eye {
   width: 2rem;
-  height: 2rem;
-  z-index: 1;
+  height: 3rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 1.8rem;
+  background: url("../../assets/icon/hidden.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
 }
 
-.signin__wrapper .signin__item .signin__form .signin__password.error input {
-  border: 1px solid #f6657f;
+.signin__wrapper .signin__item .signin__form .signin__password .icon-eye.opened {
+  background: url("../../assets/icon/password.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .signin__wrapper .signin__item .signin__form .signin__button {
@@ -223,6 +227,10 @@
   .signin__wrapper .signin__item .signin__form .signin__password:after {
     top: 3.7rem;
     right: 2.7rem;
+  }
+  .signin__wrapper .signin__item .signin__form .signin__password .icon-eye {
+    top: 3.3rem;
+    right: 2.6rem;
   }
   .signin__wrapper .signin__item .signin__form .signin__button {
     padding: 1.6rem 2.4rem;
