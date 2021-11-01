@@ -48,78 +48,97 @@ window.addEventListener("popstate", (e) => {
   spaResolver(e.currentTarget.location.pathname.substring(1));
 });
 
-let validated = false;
 const formAction = () => {
   const form = document.querySelector("FORM");
-
-  form.addEventListener("change", (event) => {
-    validateForm(event);
-  });
 
   form.addEventListener("click", (event) => {
     showHidePassword(event);
   });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    validateForm();
+    console.log(form);
+    const formData = document.querySelectorAll("INPUT");
+    let validated = false;
+    formData.forEach((input) => {
+      if (input.classList.contains("error")) {
+        return (validated = false);
+      } else {
+        return (validated = true);
+      }
+    });
+
+    if (validated) {
+      form.reset();
+    } else {
+    }
+  });
 };
 
-const validateForm = (event) => {
-  switch (event.target.id) {
-    case "firstname":
-      if (
-        validator.isAlpha(event.target.value) &&
-        validator.isLength(event.target.value, { min: 1, max: 30 })
-      ) {
-        removeErrorMessage(event);
-      } else {
-        addErrorMessage(
-          event,
-          "Usually first name contains 1 symbol minimum and only letters"
-        );
-      }
-      break;
-    case "lastname":
-      if (
-        validator.isAlpha(event.target.value) &&
-        validator.isLength(event.target.value, { min: 1, max: 30 })
-      ) {
-        removeErrorMessage(event);
-      } else {
-        addErrorMessage(
-          event,
-          "Usually last name contains 1 symbol minimum and only letters"
-        );
-      }
-      break;
-    case "email":
-      if (validator.isEmail(event.target.value)) {
-        removeErrorMessage(event);
-      } else {
-        addErrorMessage(
-          event,
-          "Looks like you don't want provide your email, but it needed"
-        );
-      }
-      break;
-    case "password":
-      if (validator.isLength(event.target.value, { min: 8, max: 30 })) {
-        removeErrorMessage(event);
-      } else {
-        addErrorMessage(
-          event,
-          "Password should contain minimum 8 symbols and maximum 30"
-        );
-      }
-      break;
-    case "confirm":
-      if (validator.isLength(event.target.value, { min: 8, max: 30 })) {
-        removeErrorMessage(event);
-      } else {
-        addErrorMessage(
-          event,
-          "Password should contain minimum 8 symbols and maximum 30"
-        );
-      }
-      break;
-  }
+const validateForm = () => {
+  const formData = document.querySelectorAll("INPUT");
+
+  formData.forEach((input) => {
+    switch (input.id) {
+      case "firstname":
+        if (
+          validator.isAlpha(input.value) &&
+          validator.isLength(input.value, { min: 1, max: 30 })
+        ) {
+          removeErrorMessage(input);
+        } else {
+          addErrorMessage(
+            input,
+            "Usually first name contains 1 symbol minimum and only letters"
+          );
+        }
+        break;
+      case "lastname":
+        if (
+          validator.isAlpha(input.value) &&
+          validator.isLength(input.value, { min: 1, max: 30 })
+        ) {
+          removeErrorMessage(input);
+        } else {
+          addErrorMessage(
+            input,
+            "Usually last name contains 1 symbol minimum and only letters"
+          );
+        }
+        break;
+      case "email":
+        if (validator.isEmail(input.value)) {
+          removeErrorMessage(input);
+        } else {
+          addErrorMessage(
+            input,
+            "Looks like you don't want provide your email, but it needed"
+          );
+        }
+        break;
+      case "password":
+        if (validator.isLength(input.value, { min: 8, max: 30 })) {
+          removeErrorMessage(input);
+        } else {
+          addErrorMessage(
+            input,
+            "Password should contain minimum 8 symbols and maximum 30"
+          );
+        }
+        break;
+      case "confirm":
+        if (validator.isLength(input.value, { min: 8, max: 30 })) {
+          removeErrorMessage(input);
+        } else {
+          addErrorMessage(
+            input,
+            "Password should contain minimum 8 symbols and maximum 30"
+          );
+        }
+        break;
+    }
+  });
 };
 
 const showHidePassword = (event) => {
@@ -144,16 +163,16 @@ const dataHandler = () => {
   });
 };
 
-const addErrorMessage = (event, message) => {
-  const text = event.target.closest("div").querySelector("span");
-  event.target.classList.add("error");
+const addErrorMessage = (input, message) => {
+  const text = input.closest("div").querySelector("span");
+  input.classList.add("error");
   text.setAttribute("style", "display:block");
   text.innerHTML = message;
 };
 
-const removeErrorMessage = (event) => {
-  const text = event.target.closest("div").querySelector("span");
-  event.target.classList.remove("error");
+const removeErrorMessage = (input) => {
+  const text = input.closest("div").querySelector("span");
+  input.classList.remove("error");
   text.setAttribute("style", "display");
   text.innerHTML = "";
 };

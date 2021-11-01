@@ -1,4 +1,4 @@
-@import "./styles/contants/colors.scss";
+@import "./src/styles/contants/colors.scss";
 
 *,
 *::before,
@@ -20,7 +20,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
+  overflow: auto;
 }
 
 html {
