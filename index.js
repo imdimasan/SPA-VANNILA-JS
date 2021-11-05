@@ -37,6 +37,11 @@ const spaResolver = async (location) => {
       document.title = "ITRex - Lab. Restore Password Page";
       formAction();
       break;
+    case "account":
+      app.innerHTML = html;
+      document.title = "ITRex - Lab. Patient Page";
+      patientList();
+      break;
   }
 };
 
@@ -71,6 +76,7 @@ const formAction = () => {
 
     if (validated) {
       form.reset();
+      spaResolver("account");
     } else {
     }
   });
@@ -175,4 +181,54 @@ const removeErrorMessage = (input) => {
   input.classList.remove("error");
   text.setAttribute("style", "display");
   text.innerHTML = "";
+};
+
+const patientList = async () => {
+  const dashboard = document.querySelector(".account__appointments");
+  const response = await fetch("db.json");
+  const appointments = await response.json();
+  console.log(appointments);
+  console.log(dashboard);
+
+  if (appointments.length > 0) {
+    appointments.map((appointments) => {
+      dashboard.innerHTML += `
+      <div class="account__patients__card">
+            <div class="account__patients__card_header">
+              <div class="account__patients__avatar">
+                <img src="${appointments.patientAvatar}" alt="" />
+              </div>
+              <div class="account__patients__info">
+                <h3>${appointments.patient}</h3>
+                <p>Appointment is confirmed</p>
+                <div class="appointment__confimation"></div>
+              </div>
+              <div class="account__patients__controls">
+                <button type="button" class="account__sort"></button>
+              </div>
+            </div>
+            <div class="account__patients__card_body">
+              <div class="account__patiens__date">
+                <h3>${appointments.appointmentDate} ${appointments.appointmentTime}</h3>
+              </div>
+              <div class="account__patiens__description">
+                <p>
+                ${appointments.appointmentDescription}
+                </p>
+              </div>
+            </div>
+          </div>
+      `;
+    });
+  } else {
+    dashboard.innerHTML = `
+    <div class="account__empty">
+      <p>
+        You have no patients yet.<br />
+        To create a patient profile, please contact your
+        administrator.
+      </p>
+    </div>
+    `;
+  }
 };
