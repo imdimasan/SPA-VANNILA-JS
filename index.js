@@ -8,7 +8,6 @@ const spaResolver = async (location) => {
       : location;
   const response = await fetch(`src/pages/${currentLocation}.html`);
   const html = await response.text();
-  history.pushState(null, null, location);
   css.href = `src/styles/pages/${currentLocation}.css`;
   switch (location) {
     case "/":
@@ -45,8 +44,9 @@ const spaResolver = async (location) => {
   }
 };
 
-const backwardHandler = () => {
-  history.back();
+const pageMove = (location) => {
+  history.pushState(null, null, location);
+  spaResolver(location);
 };
 
 window.addEventListener("popstate", (e) => {
@@ -76,7 +76,7 @@ const formAction = () => {
 
     if (validated) {
       form.reset();
-      spaResolver("account");
+      pageMove("account");
     } else {
     }
   });
@@ -184,16 +184,21 @@ const removeErrorMessage = (input) => {
 };
 
 const patientList = async () => {
-  const dashboard = document.querySelector(".account__appointments");
+  const dashboard = document.querySelector(".account__appointments__root");
   const response = await fetch("db.json");
   const appointments = await response.json();
   console.log(appointments);
   console.log(dashboard);
 
   if (appointments.length > 0) {
+    dashboard.innerHTML = `
+    <ul class="account__appointments"></ul>
+    `;
+
     appointments.map((appointments) => {
-      dashboard.innerHTML += `
-      <div class="account__patients__card">
+      document.querySelector(".account__appointments").innerHTML += `
+      
+      <li class="account__patients__card">
             <div class="account__patients__card_header">
               <div class="account__patients__avatar">
                 <img src="${appointments.patientAvatar}" alt="" />
@@ -217,7 +222,8 @@ const patientList = async () => {
                 </p>
               </div>
             </div>
-          </div>
+          </li>
+          
       `;
     });
   } else {

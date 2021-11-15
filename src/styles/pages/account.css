@@ -48,6 +48,10 @@
           flex-direction: column;
 }
 
+.account__wrapper .account__item ul {
+  padding: 0;
+}
+
 .account__wrapper .account__item .account__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -127,27 +131,27 @@
   border: none;
 }
 
-.account__wrapper .account__item .account__appointments {
+.account__wrapper .account__item .account__appointments__root {
   overflow-y: auto;
   padding-right: 0.3rem;
 }
 
-.account__wrapper .account__item .account__appointments::-webkit-scrollbar {
+.account__wrapper .account__item .account__appointments__root::-webkit-scrollbar {
   position: absolute;
   width: 8px;
 }
 
-.account__wrapper .account__item .account__appointments::-webkit-scrollbar-track {
+.account__wrapper .account__item .account__appointments__root::-webkit-scrollbar-track {
   border-radius: 8px;
   background-color: #dce0ec32;
 }
 
-.account__wrapper .account__item .account__appointments::-webkit-scrollbar-thumb {
+.account__wrapper .account__item .account__appointments__root::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-color: #dce0ec56;
 }
 
-.account__wrapper .account__item .account__appointments .account__empty {
+.account__wrapper .account__item .account__appointments__root .account__empty {
   width: 27.2rem;
   height: 31.2rem;
   display: -webkit-box;
@@ -166,7 +170,7 @@
   background-position-y: 5.6rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__empty p {
+.account__wrapper .account__item .account__appointments__root .account__empty p {
   font-family: "Poppins";
   color: #a1abc9;
   font-weight: 400;
@@ -176,15 +180,16 @@
   margin-bottom: 1.7rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card {
+.account__wrapper .account__item .account__appointments__root .account__patients__card {
   background: #ffffff;
   height: 30.5rem;
   width: 100%;
   border-radius: 1.2rem;
-  margin-bottom: 2.4rem;
+  list-style-type: none;
+  margin-bottom: 2rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header {
+.account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,31 +204,34 @@
   margin-bottom: 1.6rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__avatar {
+.account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__avatar {
   border-radius: 50%;
   width: 6.5rem;
   height: 6rem;
   margin-left: 0.5rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__avatar img {
+.account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__avatar img {
   border-radius: 50%;
   width: 4.8rem;
   height: 4.8rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__info {
+.account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__info {
   margin-left: 1.2rem;
   max-width: 15rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__info h3 {
+.account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__info h3 {
   font-family: "Poppins";
   font-weight: 600;
   font-size: 1.7rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__info p {
+.account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__info p {
   font-family: "Poppins";
   color: #a1abc9;
   font-weight: 500;
@@ -234,7 +242,7 @@
   line-height: 17px;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__info .appointment__confimation {
+.account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__info .appointment__confimation {
   width: 0.8rem;
   height: 0.8rem;
   background: #34c197;
@@ -243,11 +251,11 @@
   position: relative;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__controls {
+.account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__controls {
   margin-bottom: 0.8rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__sort {
+.account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__sort {
   background: transparent;
   border: none;
   background-image: url("../../assets/icon/more-vertical.svg");
@@ -256,40 +264,40 @@
   background-repeat: no-repeat;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card_body {
+.account__wrapper .account__item .account__appointments__root .account__patients__card_body {
   padding: 0 2.4rem 0 5.6rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card_body .account__patiens__date {
+.account__wrapper .account__item .account__appointments__root .account__patients__card_body .account__patiens__date {
   position: relative;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card_body .account__patiens__date:before {
+.account__wrapper .account__item .account__appointments__root .account__patients__card_body .account__patiens__date:before {
   content: url("../../assets/icon/clock.svg");
   position: absolute;
   top: 0.2rem;
   left: -3.9rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card_body .account__patiens__description {
+.account__wrapper .account__item .account__appointments__root .account__patients__card_body .account__patiens__description {
   position: relative;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card_body .account__patiens__description:before {
+.account__wrapper .account__item .account__appointments__root .account__patients__card_body .account__patiens__description:before {
   content: url("../../assets/icon/dashboard.svg");
   position: absolute;
   top: 0.2rem;
   left: -3.7rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card_body h3 {
+.account__wrapper .account__item .account__appointments__root .account__patients__card_body h3 {
   position: relative;
   margin-bottom: 2.3rem;
   line-height: 2rem;
   font-size: 1.5rem;
 }
 
-.account__wrapper .account__item .account__appointments .account__patients__card_body p {
+.account__wrapper .account__item .account__appointments__root .account__patients__card_body p {
   font-size: 1.5rem;
   color: #202225;
   line-height: 2.1rem;
@@ -323,6 +331,9 @@
   .account__wrapper .account__item .account__buttons button {
     width: 16rem;
   }
+  .account__wrapper .account__item .account__navigation {
+    margin-bottom: 4.1rem;
+  }
   .account__wrapper .account__item .account__navigation h1 {
     position: relative;
     top: 2px;
@@ -332,54 +343,55 @@
     margin-right: 2.9rem;
     gap: 3.2rem;
   }
-  .account__wrapper .account__item .account__appointments {
+  .account__wrapper .account__item .account__appointments__root {
     padding-right: 2.2rem;
   }
-  .account__wrapper .account__item .account__appointments::-webkit-scrollbar {
+  .account__wrapper .account__item .account__appointments__root::-webkit-scrollbar {
     position: absolute;
     width: 12px;
   }
-  .account__wrapper .account__item .account__appointments .account__empty {
-    margin-top: 9.4rem;
+  .account__wrapper .account__item .account__appointments__root .account__empty {
+    margin-top: 7rem;
     width: 47rem;
   }
-  .account__wrapper .account__item .account__appointments .account__empty p {
+  .account__wrapper .account__item .account__appointments__root .account__empty p {
     padding: 0;
     margin-bottom: 5.2rem;
   }
-  .account__wrapper .account__item .account__appointments .account__patients__card {
-    margin-top: 2.4rem;
-    height: 24.4rem;
+  .account__wrapper .account__item .account__appointments__root .account__patients__card {
+    height: 24.6rem;
+    margin-bottom: 2.2rem;
   }
-  .account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__avatar {
+  .account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__avatar {
     width: 6.9rem;
     height: 5.8rem;
   }
-  .account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__info {
+  .account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__info {
     margin-right: auto;
     max-width: 24rem;
     margin-left: 0.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  .account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__info .appointment__confimation {
+  .account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__info .appointment__confimation {
     bottom: 1rem;
   }
-  .account__wrapper .account__item .account__appointments .account__patients__card .account__patients__card_header .account__patients__controls {
+  .account__wrapper .account__item .account__appointments__root .account__patients__card .account__patients__card_header .account__patients__controls {
     margin-right: 1.2rem;
   }
-  .account__wrapper .account__item .account__appointments .account__patients__card_body {
+  .account__wrapper .account__item .account__appointments__root .account__patients__card_body {
     padding: 0.9rem 2.4rem 0 7.2rem;
   }
-  .account__wrapper .account__item .account__appointments .account__patients__card_body .account__patiens__description {
+  .account__wrapper .account__item .account__appointments__root .account__patients__card_body .account__patiens__description {
     top: -0.5rem;
   }
 }
 
 @media (min-width: 1920px) {
   .account__wrapper .account__item .account__navigation {
-    margin-bottom: 0.7rem;
+    margin-bottom: 3.1rem;
   }
+  .account__wrapper .account__item .account__appointments__root,
   .account__wrapper .account__item .account__appointments {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -389,11 +401,15 @@
     gap: 2rem;
     padding-right: 3rem;
   }
+  .account__wrapper .account__item .account__appointments__root .account__patients__card,
   .account__wrapper .account__item .account__appointments .account__patients__card {
     width: 40.6rem;
+    height: 26.6rem;
+    margin-bottom: 0.3rem;
   }
+  .account__wrapper .account__item .account__appointments__root .account__empty,
   .account__wrapper .account__item .account__appointments .account__empty {
-    margin-top: 19.4rem;
+    margin-top: 17rem;
   }
 }
 /*# sourceMappingURL=account.css.map */
