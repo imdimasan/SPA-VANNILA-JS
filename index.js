@@ -63,14 +63,13 @@ const formAction = () => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     validateForm();
-    console.log(form);
     const formData = document.querySelectorAll("INPUT");
     let validated = false;
     formData.forEach((input) => {
       if (input.classList.contains("error")) {
-        return (validated = false);
+        validated = false;
       } else {
-        return (validated = true);
+        validated = true;
       }
     });
 
@@ -78,6 +77,7 @@ const formAction = () => {
       form.reset();
       pageMove("account");
     } else {
+      return;
     }
   });
 };
@@ -164,9 +164,7 @@ const showHidePassword = (event) => {
 };
 
 const dataHandler = () => {
-  const data = document.querySelectorAll("INPUT").forEach((input) => {
-    console.log("ID:", input.id, "VALUE:", input.value);
-  });
+  const data = document.querySelectorAll("INPUT").forEach((input) => {});
 };
 
 const addErrorMessage = (input, message) => {
@@ -187,8 +185,6 @@ const patientList = async () => {
   const dashboard = document.querySelector(".account__appointments__root");
   const response = await fetch("db.json");
   const appointments = await response.json();
-  console.log(appointments);
-  console.log(dashboard);
 
   if (appointments.length > 0) {
     dashboard.innerHTML = `
