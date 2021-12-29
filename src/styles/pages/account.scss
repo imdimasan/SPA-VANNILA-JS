@@ -1,0 +1,342 @@
+@import "../contants/colors.scss";
+
+.account__wrapper {
+  background: $backgroundblue;
+  width: 100%;
+  height: 100vh;
+  .account__header {
+    display: flex;
+    padding: 2rem 2.4rem 1.2rem;
+    justify-content: space-between;
+
+    .account__icon {
+      position: relative;
+      bottom: 0.4rem;
+      &:after {
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        width: 0.8rem;
+        height: 0.8rem;
+        box-sizing: content-box;
+        background: green;
+        border: 3px solid #e3ebff;
+        top: -3px;
+        right: -3px;
+      }
+    }
+  }
+  .account__item {
+    position: relative;
+    background: $background;
+    height: calc(100% - 7.2rem);
+    border-radius: 1.6rem 1.6rem 0 0;
+    padding: 4rem 1.4rem 4.5rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    ul {
+      padding: 0;
+    }
+    .account__buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4.1rem;
+      margin-right: 1.8rem;
+      button {
+        background: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: none;
+        color: $primary;
+        background: $white;
+        padding: 1.2rem 0;
+        width: 12rem;
+        height: 4rem;
+        border-radius: 0.8rem;
+        font-weight: 400;
+        font-size: 1.5rem;
+        &.active {
+          background: $primary;
+          color: $white;
+          font-weight: 600;
+        }
+      }
+    }
+    .account__navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.7rem;
+      margin-right: 1rem;
+      .account__controls {
+        display: flex;
+        align-items: flex-end;
+        gap: 2.4rem;
+        .account__search {
+          background: url("../../assets/icon/search.svg");
+          background-repeat: no-repeat;
+          width: 2.5rem;
+          height: 2.6rem;
+          padding: 0;
+          border: none;
+        }
+        .account__sort {
+          background: url("../../assets/icon/sort.svg");
+          background-repeat: no-repeat;
+          width: 2.2rem;
+          height: 2.5rem;
+          padding: 0;
+          border: none;
+        }
+      }
+    }
+    .account__appointments__root {
+      overflow-y: auto;
+      padding-right: 0.3rem;
+      &::-webkit-scrollbar {
+        position: absolute;
+        width: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 8px;
+        background-color: #dce0ec32;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: #dce0ec56;
+      }
+
+      .account__empty {
+        width: 27.2rem;
+        height: 31.2rem;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        align-items: flex-end;
+        background: url("../../assets/icon/medical-history.svg");
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 5.6rem;
+        p {
+          font-family: "Poppins";
+          color: $primarytext;
+          font-weight: 400;
+          font-size: 1.5rem;
+          text-align: center;
+          padding: 0 3.7rem;
+          margin-bottom: 1.7rem;
+        }
+      }
+      .account__patients__card {
+        background: $white;
+        height: 30.5rem;
+        width: 100%;
+        border-radius: 1.2rem;
+        list-style-type: none;
+        margin-bottom: 2rem;
+        .account__patients__card_header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 2rem 1.6rem 0.9rem;
+          border-bottom: 1px solid #dce0ec;
+          margin-bottom: 1.6rem;
+          .account__patients__avatar {
+            border-radius: 50%;
+            width: 6.5rem;
+            height: 6rem;
+            margin-left: 0.5rem;
+            img {
+              border-radius: 50%;
+              width: 4.8rem;
+              height: 4.8rem;
+            }
+          }
+          .account__patients__info {
+            margin-left: 1.2rem;
+            max-width: 15rem;
+            h3 {
+              font-family: "Poppins";
+              font-weight: 600;
+              font-size: 1.7rem;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+            p {
+              font-family: "Poppins";
+              color: $primarytext;
+              font-weight: 500;
+              font-size: 1.3rem;
+              position: relative;
+              left: 1.6rem;
+              top: 2px;
+              line-height: 17px;
+            }
+            .appointment__confimation {
+              width: 0.8rem;
+              height: 0.8rem;
+              background: #34c197;
+              border-radius: 50%;
+              bottom: 27px;
+              position: relative;
+            }
+          }
+          .account__patients__controls {
+            margin-bottom: 0.8rem;
+          }
+          .account__sort {
+            background: transparent;
+            border: none;
+            background-image: url("../../assets/icon/more-vertical.svg");
+            height: 2.4rem;
+            width: 2.4rem;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+      .account__patients__card_body {
+        .account__patiens__date {
+          position: relative;
+          &:before {
+            content: url("../../assets/icon/clock.svg");
+            position: absolute;
+            top: 0.2rem;
+            left: -3.9rem;
+          }
+        }
+        .account__patiens__description {
+          position: relative;
+          &:before {
+            content: url("../../assets/icon/dashboard.svg");
+            position: absolute;
+            top: 0.2rem;
+            left: -3.7rem;
+          }
+        }
+        padding: 0 2.4rem 0 5.6rem;
+        h3 {
+          position: relative;
+          margin-bottom: 2.3rem;
+          line-height: 2rem;
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 1.5rem;
+          color: #202225;
+          line-height: 2.1rem;
+        }
+      }
+    }
+    h1 {
+      font-family: "Poppins";
+      font-weight: 600;
+      font-size: 2rem;
+      width: 15rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .account__wrapper {
+    .account__header {
+      padding: 2.4rem 6.4rem 1.5rem;
+    }
+    .account__item {
+      margin: 0 6.5rem;
+      border-radius: 1.6rem;
+      height: calc(100% - 12.7rem);
+      max-height: 100vh;
+      padding: 4.1rem 1.6rem 4.5rem 4.7rem;
+      .account__buttons {
+        justify-content: flex-start;
+        gap: 1.2rem;
+        margin-bottom: 5.1rem;
+        button {
+          width: 16rem;
+        }
+      }
+      .account__navigation {
+        margin-bottom: 4.1rem;
+        h1 {
+          position: relative;
+          top: 2px;
+          font-size: 2.4rem;
+        }
+        .account__controls {
+          margin-right: 2.9rem;
+          gap: 3.2rem;
+        }
+      }
+      .account__appointments__root {
+        padding-right: 2.2rem;
+        &::-webkit-scrollbar {
+          position: absolute;
+          width: 12px;
+        }
+        .account__empty {
+          margin-top: 7rem;
+          width: 47rem;
+          p {
+            padding: 0;
+            margin-bottom: 5.2rem;
+          }
+        }
+        .account__patients__card {
+          height: 24.6rem;
+          margin-bottom: 2.2rem;
+          .account__patients__card_header {
+            .account__patients__avatar {
+              width: 6.9rem;
+              height: 5.8rem;
+            }
+            .account__patients__info {
+              margin-right: auto;
+              max-width: 24rem;
+              margin-left: 0.5rem;
+              margin-top: 1rem;
+              margin-bottom: 1rem;
+              .appointment__confimation {
+                bottom: 1rem;
+              }
+            }
+            .account__patients__controls {
+              margin-right: 1.2rem;
+            }
+          }
+        }
+        .account__patients__card_body {
+          padding: 0.9rem 2.4rem 0 7.2rem;
+          .account__patiens__description {
+            top: -0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .account__wrapper {
+    .account__item {
+      .account__navigation {
+        margin-bottom: 3.1rem;
+      }
+      .account__appointments__root,
+      .account__appointments {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding-right: 3rem;
+        .account__patients__card {
+          width: 40.6rem;
+          height: 26.6rem;
+          margin-bottom: 0.3rem;
+        }
+        .account__empty {
+          margin-top: 17rem;
+        }
+      }
+    }
+  }
+}

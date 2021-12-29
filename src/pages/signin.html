@@ -1,0 +1,30 @@
+<section>
+  <div class="signin__wrapper">
+    <div class="signin__item">
+      <form class="signin__form">
+        <h1>Sign In</h1>
+        <div class="signin__email">
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <span class="signin__email_error"></span>
+        </div>
+        <div class="signin__password">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+          <button type="button" class="icon-eye"></button>
+          <span class="signin__password_error"></span>
+        </div>
+
+        <button type="submit" class="signin__button">Sign in</button>
+        <a onclick="pageMove('restore')">Forgot Password?</a>
+      </form>
+      <div class="signin__notification">
+        <p>Don't have an account?</p>
+        <a onclick="pageMove('/')">Sign up</a>
+      </div>
+    </div>
+  </div>
+</section>

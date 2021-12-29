@@ -1,0 +1,61 @@
+<section>
+  <div class="signup__wrapper">
+    <div class="signup__item">
+      <form class="signup__form">
+        <h1>Sign Up</h1>
+        <div class="signup__firstname">
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            placeholder="First Name"
+          />
+          <span class="signup__firstname_error"></span>
+        </div>
+
+        <div class="signup__lastname">
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            placeholder="Last Name"
+          />
+          <span class="signup__lastname_error"></span>
+        </div>
+
+        <div class="signup__email">
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <span class="signup__email_error"></span>
+        </div>
+
+        <div class="signup__password">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+          <button type="button" class="icon-eye"></button>
+          <span class="signup__password_error"></span>
+        </div>
+
+        <div class="signup__confirm">
+          <input
+            type="password"
+            name="confirm"
+            id="confirm"
+            placeholder="Confirm Password"
+          />
+          <button type="button" class="icon-eye"></button>
+          <span class="signup__confirm_error"></span>
+        </div>
+
+        <button type="sumbit" class="signup__button">Sign up</button>
+      </form>
+      <div class="signup__notification">
+        <p>Already have an account?</p>
+        <a onclick="pageMove('signin')">Sign in</a>
+      </div>
+    </div>
+  </div>
+</section>

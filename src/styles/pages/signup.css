@@ -10,9 +10,9 @@
   position: relative;
   background: #f9faff;
   top: 7.2rem;
-  height: calc(100% - 7.2rem);
+  min-height: calc(100% - 7.2rem);
   border-radius: 2.4rem 2.4rem 0 0;
-  padding: 8.8rem 3.2rem 4.5rem 3.2rem;
+  padding: 3.2rem 3.2rem 4.5rem 3.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,10 +26,9 @@
 }
 
 .signup__wrapper .signup__item h1 {
-  position: absolute;
-  top: 3.3rem;
   font-weight: 600;
   font-size: 2rem;
+  margin-bottom: 2.6rem;
 }
 
 .signup__wrapper .signup__item .signup__form input {
@@ -62,6 +61,10 @@
 
 .signup__wrapper .signup__item .signup__form input:focus {
   border: 1px solid #7297ff;
+}
+
+.signup__wrapper .signup__item .signup__form input.error {
+  border: 1px solid #f6657f;
 }
 
 .signup__wrapper .signup__item .signup__form .signup__firstname,
@@ -112,16 +115,6 @@
   z-index: 1;
 }
 
-.signup__wrapper .signup__item .signup__form .signup__password:after {
-  content: url("../../assets/icon/hidden.svg");
-  position: absolute;
-  top: 0.9rem;
-  right: 1.9rem;
-  width: 2rem;
-  height: 2rem;
-  z-index: 1;
-}
-
 .signup__wrapper .signup__item .signup__form .signup__confirm {
   position: relative;
   margin-bottom: 0.8rem;
@@ -141,18 +134,29 @@
   z-index: 1;
 }
 
-.signup__wrapper .signup__item .signup__form .signup__confirm:after {
-  content: url("../../assets/icon/hidden.svg");
-  position: absolute;
-  top: 0.9rem;
-  right: 1.9rem;
+.signup__wrapper .signup__item .signup__form .signup__password .icon-eye,
+.signup__wrapper .signup__item .signup__form .signup__confirm .icon-eye {
   width: 2rem;
-  height: 2rem;
-  z-index: 1;
+  height: 3rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 1.8rem;
+  background: url("../../assets/icon/hidden.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+.signup__wrapper .signup__item .signup__form .signup__password .icon-eye.opened,
+.signup__wrapper .signup__item .signup__form .signup__confirm .icon-eye.opened {
+  background: url("../../assets/icon/password.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .signup__wrapper .signup__item .signup__form .signup__button {
   background: #7297ff;
+  cursor: pointer;
   text-align: left;
   border: none;
   color: #ffffff;
@@ -173,6 +177,22 @@
   left: 1.7rem;
 }
 
+.signup__wrapper .signup__item .signup__form .signup__firstname_error,
+.signup__wrapper .signup__item .signup__form .signup__lastname_error,
+.signup__wrapper .signup__item .signup__form .signup__email_error,
+.signup__wrapper .signup__item .signup__form .signup__password_error,
+.signup__wrapper .signup__item .signup__form .signup__confirm_error {
+  position: relative;
+  display: none;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  line-height: 16.6px;
+  font-size: 1.3rem;
+  letter-spacing: -0.24px;
+  top: -0.8rem;
+  color: #f6657f;
+}
+
 .signup__wrapper .signup__item .signup__notification {
   display: block;
 }
@@ -187,6 +207,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   color: #7297ff;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -232,10 +253,6 @@
     top: 1.8rem;
     left: 2.8rem;
   }
-  .signup__wrapper .signup__item .signup__form .signup__password:after {
-    top: 1.7rem;
-    right: 2.7rem;
-  }
   .signup__wrapper .signup__item .signup__form .signup__confirm {
     margin-bottom: 2.4rem;
   }
@@ -243,9 +260,14 @@
     top: 2.2rem;
     left: 2.8rem;
   }
-  .signup__wrapper .signup__item .signup__form .signup__confirm:after {
-    top: 1.7rem;
-    right: 2.7rem;
+  .signup__wrapper .signup__item .signup__form .signup__password input,
+  .signup__wrapper .signup__item .signup__form .signup__confirm input {
+    padding: 0.95rem 4.7rem 0.95rem 6.3rem;
+  }
+  .signup__wrapper .signup__item .signup__form .signup__password .icon-eye,
+  .signup__wrapper .signup__item .signup__form .signup__confirm .icon-eye {
+    top: 1.3rem;
+    right: 2.6rem;
   }
   .signup__wrapper .signup__item .signup__form .signup__button {
     padding: 1.6rem 2.4rem;
@@ -255,6 +277,14 @@
   }
   .signup__wrapper .signup__item .signup__form .signup__button:after {
     top: 0.1rem;
+  }
+  .signup__wrapper .signup__item .signup__form .signup__firstname_error,
+  .signup__wrapper .signup__item .signup__form .signup__lastname_error,
+  .signup__wrapper .signup__item .signup__form .signup__email_error,
+  .signup__wrapper .signup__item .signup__form .signup__password_error,
+  .signup__wrapper .signup__item .signup__form .signup__confirm_error {
+    top: -1.1rem;
+    margin-bottom: 1.8rem;
   }
   .signup__wrapper .signup__item .signup__notification {
     position: relative;

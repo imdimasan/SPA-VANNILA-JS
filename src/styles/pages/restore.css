@@ -24,12 +24,6 @@
   margin-bottom: 2.6rem;
 }
 
-.restore__wrapper .restore__item h1:before {
-  position: absolute;
-  left: -3.2rem;
-  content: url("../../assets/icon/arrow-left.svg");
-}
-
 .restore__wrapper .restore__item .restore__notification {
   position: relative;
   margin-bottom: 2.4rem;
@@ -46,6 +40,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   color: #7297ff;
+  cursor: pointer;
 }
 
 .restore__wrapper .restore__item .restore__form input {
@@ -80,6 +75,10 @@
   border: 1px solid #7297ff;
 }
 
+.restore__wrapper .restore__item .restore__form input.error {
+  border: 1px solid #f6657f;
+}
+
 .restore__wrapper .restore__item .restore__form .restore__email {
   position: relative;
 }
@@ -94,10 +93,6 @@
   z-index: 1;
 }
 
-.restore__wrapper .restore__item .restore__form .restore__email.error input {
-  border: 1px solid #f6657f;
-}
-
 .restore__wrapper .restore__item .restore__form .restore__button {
   background: #7297ff;
   display: block;
@@ -105,6 +100,7 @@
   top: 0.8rem;
   text-align: left;
   border: none;
+  cursor: pointer;
   color: #ffffff;
   padding: 1.2rem 1.6rem;
   width: 19.8rem;
@@ -121,6 +117,30 @@
   width: 7.7rem;
   top: 0.1rem;
   left: 1.4rem;
+}
+
+.restore__wrapper .restore__item .restore__form .restore__email_error {
+  position: relative;
+  display: none;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  line-height: 16.6px;
+  font-size: 1.3rem;
+  letter-spacing: -0.24px;
+  top: -0.8rem;
+  color: #f6657f;
+}
+
+.restore__wrapper .restore__item .icon-arrow-left {
+  width: 2rem;
+  height: 3rem;
+  position: absolute;
+  top: 3.3rem;
+  left: 3.4rem;
+  background: url(../../assets/icon/arrow-left.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
 }
 
 @media (min-width: 768px) {
@@ -167,6 +187,10 @@
   }
   .restore__wrapper .restore__item .restore__form .restore__button:after {
     top: 0.1rem;
+  }
+  .restore__wrapper .restore__item .restore__form .restore__email_error {
+    top: -1.1rem;
+    margin-bottom: 1.8rem;
   }
   .restore__wrapper .restore__item .restore__notification {
     display: -webkit-box;
